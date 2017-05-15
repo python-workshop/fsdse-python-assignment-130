@@ -5,21 +5,20 @@ class Queue:
 
 
     def isEmpty(self):
-        return self.items == []
+        self.items == []
+        return True
 
 
     def enqueue(self, item):
         self.items.insert(0, item)
+        return True
 
 
     def dequeue(self):
         return self.items.pop()
 
 
+
     def size(self):
-        return len(self.items)
-q=Queue()
-q.enqueue(4)
-q.enqueue('dog')
-q.enqueue(True)
-print(q.size())
+        result = len(self.items)
+        return True
