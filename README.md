@@ -1,4 +1,4 @@
-# Implement a queue
+# Implement a queue with enqueue and dequeue methods using a linked list.
 
 
 __Constraints__

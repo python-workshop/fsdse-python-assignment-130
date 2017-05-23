@@ -1,24 +1,35 @@
+class Node(object):
 
-class Queue:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+
+class Queue(object):
+
     def __init__(self):
-        self.items = []
+        self.head = None
+        self.tail = None
 
-
-    def isEmpty(self):
-        self.items == []
-        return True
-
-
-    def enqueue(self, item):
-        self.items.insert(0, item)
-        return True
-
+    def enqueue(self, data):
+        node = Node(data)
+        # Empty list
+        if self.head is None and self.tail is None:
+            self.head = node
+            self.tail = node
+        else:
+            self.tail.next = node
+            self.tail = node
 
     def dequeue(self):
-        return self.items.pop()
-
-
-
-    def size(self):
-        result = len(self.items)
-        return True
+        # Empty list
+        if self.head is None and self.tail is None:
+            return None
+        data = self.head.data
+        # Remove only element from a one element list
+        if self.head == self.tail:
+            self.head = None
+            self.tail = None
+        else:
+            self.head = self.head.next
+        return data
